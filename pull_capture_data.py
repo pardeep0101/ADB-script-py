@@ -64,13 +64,17 @@ else:
 # Code added: Pardeep
 # added the condition to run the pull command only when phone is connected.
 if not "undefined" in output3:
-	pull_command="adb pull "+  directory  +"/Attribute-data/ '/home/larsip-ubuntu-3/ara-attribute-data/"+  folder  +"' "		
+	pull_command="adb pull "+  directory  +"/Attribute-data/ '/home/larsip-ubuntu-2/Downloads/data-char/script-data/"+  folder  +"' "		
 	# print pull_command
 	os.system(pull_command)
 print "completed"
 #############################################################################
 ##		Anshal Joshi
 ## graph plotting for all phones
+##
+#
+# Code Added: added dynamic paths.
+#
 ############################################################################
 
 if "motorola" in brand.lower():
@@ -78,7 +82,7 @@ if "motorola" in brand.lower():
 	def read_datafile(file_name):
 		data = np.loadtxt(file_name, delimiter=',')
     		return data
-	data = read_datafile('/home/larsip-ubuntu-3/ara-attribute-data/Moto/Attributes-CPU-observation-log.txt')  
+	data = read_datafile("/home/larsip-ubuntu-2/Downloads/data-char/script-data/"+  folder  +"/Attributes-CPU-observation-log.txt")  
 	x = [column[0] for column in data]
 	y = [abs(column[3]) for column in data]
 	fig1 = plt.figure()
@@ -87,7 +91,7 @@ if "motorola" in brand.lower():
 	ax1.set_xlabel('Iterations')
 	ax1.set_ylabel('Watt')
 	ax1.plot(x,y, c='r', label='the data')
-	plt.savefig('/home/larsip-ubuntu-3/ara-attribute-data/Moto/powergraph.jpg')
+	plt.savefig("/home/larsip-ubuntu-2/Downloads/data-char/script-data/"+  folder  +"/powergraph.jpg")
 	plt.show()
 	fig2 = plt.figure()
 	ax2 = fig2.add_subplot(111)
@@ -101,7 +105,7 @@ if "motorola" in brand.lower():
 	ax2.plot(x,y2, c='b', label='the data')
 	ax2.plot(x,y3, c='g', label='the data')
 	ax2.plot(x,y4, c='y', label='the data')
-	plt.savefig('/home/larsip-ubuntu-3/ara-attribute-data/Moto/CPU.jpg')
+	plt.savefig("/home/larsip-ubuntu-2/Downloads/data-char/script-data/"+  folder  +"/CPU.jpg")
 	plt.show()
 ##############################################################################
 elif "samsung" in brand.lower():
@@ -111,7 +115,7 @@ elif "samsung" in brand.lower():
 		data = np.loadtxt(file_name, delimiter=',')
     		return data
 
-	data = read_datafile('/home/larsip-ubuntu-3/ara-attribute-data/Samsung S6/Attributes-CPU-observation-log.txt')  
+	data = read_datafile("/home/larsip-ubuntu-2/Downloads/data-char/script-data/"+  folder  +"/Attributes-CPU-observation-log.txt")  
 	x = [column[0] for column in data]
 	y = [abs(column[3]) for column in data]
 
@@ -121,7 +125,7 @@ elif "samsung" in brand.lower():
 	ax1.set_xlabel('Iterations')
 	ax1.set_ylabel('Watt')
 	ax1.plot(x,y, c='r', label='the data')
-	plt.savefig('/home/larsip-ubuntu-3/ara-attribute-data/Samsung S6/powergraph.jpg')
+	plt.savefig("/home/larsip-ubuntu-2/Downloads/data-char/script-data/"+  folder  +"/powergraph.jpg")
 	plt.show()
 	fig2 = plt.figure()
 	ax2 = fig2.add_subplot(111)
@@ -135,7 +139,7 @@ elif "samsung" in brand.lower():
 	ax2.plot(x,y2, c='b', label='the data')
 	ax2.plot(x,y3, c='g', label='the data')
 	ax2.plot(x,y4, c='y', label='the data')
-	plt.savefig('/home/larsip-ubuntu-3/ara-attribute-data/Samsung S6/CPUlow.jpg')
+	plt.savefig("/home/larsip-ubuntu-2/Downloads/data-char/script-data/"+  folder  +"/CPUlow.jpg")
 	plt.show()
 	fig3 = plt.figure()
 	ax3 = fig3.add_subplot(111)
@@ -149,7 +153,7 @@ elif "samsung" in brand.lower():
 	ax3.plot(x,y6, c='b', label='the data')
 	ax3.plot(x,y7, c='g', label='the data')
 	ax3.plot(x,y8, c='y', label='the data')
-	plt.savefig('/home/larsip-ubuntu-3/ara-attribute-data/Samsung S6/CPUhigh.jpg')
+	plt.savefig("/home/larsip-ubuntu-2/Downloads/data-char/script-data/"+  folder  +"/CPUhigh.jpg")
 	plt.show()
 #########################################################################################
 elif "google" in brand.lower():
@@ -158,7 +162,7 @@ elif "google" in brand.lower():
 		data = np.loadtxt(file_name, delimiter=',')
     		return data
 
-	data = read_datafile('/home/larsip-ubuntu-3/ara-attribute-data/Nexus/Attributes-CPU-observation-log.txt')  
+	data = read_datafile("/home/larsip-ubuntu-2/Downloads/data-char/script-data/"+  folder  +"/Attributes-CPU-observation-log.txt")  
 	x = [column[0] for column in data]
 	y = [column[10] for column in data]
 
@@ -168,7 +172,7 @@ elif "google" in brand.lower():
 	ax1.set_xlabel('Iterations')
 	ax1.set_ylabel('CPU')
 	ax1.plot(x,y, c='r', label='the data')
-	plt.savefig('/home/larsip-ubuntu-3/ara-attribute-data/Nexus/CPU.jpg')
+	plt.savefig("/home/larsip-ubuntu-2/Downloads/data-char/script-data/"+  folder  +"/CPU.jpg")
 	plt.show()
 
 	
